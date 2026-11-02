@@ -1,0 +1,163 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Logistics Parser | Commercial invoices to Excel or JSON for customs brokers</title>
+<meta name="description" content="Send one commercial invoice or packing list PDF (redacted is fine). Get a clean Excel or JSON file back within 24 hours. No call, no sign-up.">
+<link rel="canonical" href="https://logisticsparser.com/">
+<link rel="icon" href="favicon.svg" type="image/svg+xml">
+<meta property="og:title" content="Logistics Parser">
+<meta property="og:description" content="Commercial invoice PDFs to structured Excel or JSON within 24 hours. Built for customs brokers.">
+<meta property="og:url" content="https://logisticsparser.com/">
+<meta property="og:type" content="website">
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<header class="top">
+ <div class="wrap">
+  <a class="logo" href="#"><img src="favicon.svg" alt="">Logistics Parser</a>
+  <nav><a href="#how">How it works</a><a href="#sample">Sample</a><a href="#privacy">Privacy</a><a href="#faq">FAQ</a><a href="#contact">Contact</a></nav>
+ </div>
+</header>
+
+<main>
+<section class="hero">
+ <div class="wrap">
+  <h1>Stop retyping commercial invoices.</h1>
+  <p class="lead">Send us a commercial invoice or packing list PDF. Within 24 hours you get a clean Excel or JSON file with every line split out, ready for your entry workflow. Your team still makes every classification and filing decision.</p>
+  <a class="btn" href="mailto:hello@logisticsparser.com?subject=Show%20me&amp;body=Hi%20Nabin%2C%0A%0AAttached%20is%20one%20invoice%20(redacted).%20Please%20send%20back%20the%20Excel%20%2F%20JSON%20version.%0A%0AThanks">Email one invoice: hello@logisticsparser.com</a>
+  <a class="btn ghost" href="#sample">See a sample first</a>
+  <p class="small" style="margin-top:14px">Free trial on one invoice. No call, no sign-up, no software to install.</p>
+ </div>
+</section>
+
+<section id="how">
+ <div class="wrap">
+  <h2>How it works</h2>
+  <p class="sub">Three steps, all by email.</p>
+  <div class="grid3">
+   <div class="card"><div class="num">1</div><h3>Send one invoice</h3><p>Email a commercial invoice or packing list PDF (digital or scanned) to hello@logisticsparser.com. Redact names, prices or anything else you like.</p></div>
+   <div class="card"><div class="num">2</div><h3>We structure it</h3><p>Header fields and every line item are pulled into rows and columns, keeping HTS numbers exactly as the supplier printed them.</p></div>
+   <div class="card"><div class="num">3</div><h3>Get Excel or JSON back</h3><p>Within 24 hours you receive the file in the format you prefer. Check it against the original and decide if it saves your team time.</p></div>
+  </div>
+ </div>
+</section>
+
+<section class="alt">
+ <div class="wrap">
+  <h2>What comes back</h2>
+  <p class="sub">The fields brokers usually retype from an invoice before an entry can start.</p>
+  <div class="grid3">
+   <div class="card"><h3>Header</h3><ul class="fields"><li>Invoice no. and date</li><li>Shipper and consignee</li><li>Incoterms and currency</li><li>B/L and container</li><li>Ports of loading / discharge</li><li>Invoice total</li></ul></div>
+   <div class="card"><h3>Every line</h3><ul class="fields"><li>Part number</li><li>Description</li><li>HTS as printed</li><li>Country of origin</li><li>Quantity and unit</li><li>Unit price and value</li><li>Metal content, if stated</li></ul></div>
+   <div class="card"><h3>Your format</h3><p>Excel (separate Header and Lines sheets) or JSON. Tell us if you need specific column names or order to match your system.</p></div>
+  </div>
+ </div>
+</section>
+
+<section id="sample">
+ <div class="wrap">
+  <h2>Before and after</h2>
+  <p class="sub">A fictional sample invoice, shown to illustrate the output format. No real shipper, importer or shipment.</p>
+  <div class="ba">
+   <div class="panel">
+    <div class="ph">Before: commercial invoice PDF</div>
+    <div class="pb inv">
+     <div class="hd">COMMERCIAL INVOICE (SAMPLE, FICTIONAL DATA)</div>
+     Invoice No: SMP-2026-0418 &nbsp; Date: 2026-10-21 &nbsp; Terms: FOB Ningbo<br>
+     Shipper: Sample Industrial Parts Co., Ltd., Ningbo, China<br>
+     Consignee: Example Importer LLC, Edison, NJ, USA<br>
+     B/L: SMPL0000123456 &nbsp; Container: SMPU1234567<br><br>
+     <table>
+      <tr><th>#</th><th>Part No.</th><th>Description</th><th>HTS</th><th>Origin</th><th class="r">Qty</th><th class="r">Total USD</th></tr>
+      <tr><td>1</td><td>BRK-2201</td><td>Steel mounting bracket, zinc plated</td><td>7326.90.8688</td><td>CN</td><td class="r">1200</td><td class="r">1,020.00</td></tr>
+      <tr><td>2</td><td>HNG-0410</td><td>Aluminum door hinge, 4 in</td><td>8302.10.6090</td><td>CN</td><td class="r">800</td><td class="r">960.00</td></tr>
+      <tr><td>3</td><td>FST-M8-30</td><td>Hex bolt M8 x 30, stainless</td><td>7318.15.2095</td><td>CN</td><td class="r">5000</td><td class="r">300.00</td></tr>
+      <tr><td colspan="7">... 3 more lines ... &nbsp; Invoice total USD 3,730.00</td></tr>
+     </table>
+    </div>
+   </div>
+   <div class="panel">
+    <div class="ph">After: JSON (Excel also available)</div>
+    <div class="pb"><pre>{
+  "header": {
+    "invoice_number": "SMP-2026-0418",
+    "invoice_date": "2026-10-21",
+    "incoterms": "FOB Ningbo",
+    "currency": "USD",
+    "bill_of_lading": "SMPL0000123456",
+    "container": "SMPU1234567"
+  },
+  "lines": [
+    {
+      "line": 1,
+      "part_number": "BRK-2201",
+      "description": "Steel mounting bracket, zinc plated",
+      "hts_as_printed": "7326.90.8688",
+      "origin": "CN",
+      "quantity": 1200,
+      "unit": "PCS",
+      "unit_price": 0.85,
+      "total_value": 1020.0,
+      "metal_content": "Steel 0.42 kg/pc"
+    },
+    ...
+  ],
+  "invoice_total": 3730.0
+}</pre></div>
+   </div>
+  </div>
+  <div class="dl">
+   <a href="sample/sample_invoice.pdf" download>Download sample invoice (PDF)</a>
+   <a href="sample/sample_output.xlsx" download>Download sample output (Excel)</a>
+   <a href="sample/sample_output.json" download>Download sample output (JSON)</a>
+  </div>
+ </div>
+</section>
+
+<section id="privacy" class="alt">
+ <div class="wrap">
+  <h2>Privacy</h2>
+  <div class="note">
+   <p style="margin-top:0">You do not need to send client documents to try this. A redacted invoice works fine: black out names, addresses, prices or anything you prefer not to share. The trial is about whether the layout and line items come through cleanly.</p>
+   <p>Files you send are used only to produce your output, are not shared with anyone else, and are deleted on request. Just reply and ask.</p>
+   <p style="margin-bottom:0">Logistics Parser does not classify goods, give tariff advice or file anything. HTS numbers are copied as printed on the document. Your licensed team stays in charge of every decision.</p>
+  </div>
+ </div>
+</section>
+
+<section id="faq">
+ <div class="wrap">
+  <h2>Questions</h2>
+  <dl class="faq">
+   <dt>Who is this for?</dt>
+   <dd>Customs brokers, entry writers and freight forwarders who key invoice and packing list data by hand before an entry or declaration.</dd>
+   <dt>What documents work?</dt>
+   <dd>Commercial invoices and packing lists as PDF, including scanned or faxed copies. Send a messy one if you want a real test.</dd>
+   <dt>What does it cost?</dt>
+   <dd>The first invoice is free. If it is useful, we will agree simple volume pricing by email based on how many documents you handle.</dd>
+   <dt>Do I need to install anything or get on a call?</dt>
+   <dd>No. Everything happens by email.</dd>
+  </dl>
+ </div>
+</section>
+
+<section id="contact" class="cta">
+ <div class="wrap">
+  <h2>Try it on one of your invoices</h2>
+  <p>Email one recent invoice (redacted is fine), or just reply "show me" and we will send the sample files. You get the structured version back within 24 hours.</p>
+  <a class="btn" href="mailto:hello@logisticsparser.com?subject=Show%20me">Email hello@logisticsparser.com</a>
+  <p class="small" style="color:#cfe0ec;margin-top:16px">Or write to <a class="mail" href="mailto:hello@logisticsparser.com">hello@logisticsparser.com</a> directly. Nabin, Logistics Parser</p>
+ </div>
+</section>
+</main>
+
+<footer>
+ <div class="wrap">
+  <span>&copy; 2026 Logistics Parser</span>
+  <span><a href="mailto:hello@logisticsparser.com">hello@logisticsparser.com</a></span>
+ </div>
+</footer>
+</body>
+</html>

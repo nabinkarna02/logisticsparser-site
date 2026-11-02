@@ -1,0 +1,89 @@
+{
+  "header": {
+    "invoice_number": "SMP-2026-0418",
+    "invoice_date": "2026-10-21",
+    "shipper": "Sample Industrial Parts Co., Ltd., Ningbo, China",
+    "consignee": "Example Importer LLC, Edison, NJ, USA",
+    "incoterms": "FOB Ningbo",
+    "currency": "USD",
+    "bill_of_lading": "SMPL0000123456",
+    "container": "SMPU1234567",
+    "port_of_loading": "Ningbo",
+    "port_of_discharge": "New York/Newark"
+  },
+  "lines": [
+    {
+      "line": 1,
+      "part_number": "BRK-2201",
+      "description": "Steel mounting bracket, zinc plated",
+      "hts_as_printed": "7326.90.8688",
+      "origin": "CN",
+      "quantity": 1200,
+      "unit": "PCS",
+      "unit_price": 0.85,
+      "total_value": 1020.0,
+      "metal_content": "Steel 0.42 kg/pc"
+    },
+    {
+      "line": 2,
+      "part_number": "HNG-0410",
+      "description": "Aluminum door hinge, 4 in",
+      "hts_as_printed": "8302.10.6090",
+      "origin": "CN",
+      "quantity": 800,
+      "unit": "PCS",
+      "unit_price": 1.2,
+      "total_value": 960.0,
+      "metal_content": "Aluminum 0.18 kg/pc"
+    },
+    {
+      "line": 3,
+      "part_number": "FST-M8-30",
+      "description": "Hex bolt M8 x 30, stainless",
+      "hts_as_printed": "7318.15.2095",
+      "origin": "CN",
+      "quantity": 5000,
+      "unit": "PCS",
+      "unit_price": 0.06,
+      "total_value": 300.0,
+      "metal_content": "Steel 0.02 kg/pc"
+    },
+    {
+      "line": 4,
+      "part_number": "GSK-115",
+      "description": "Rubber gasket, 115 mm",
+      "hts_as_printed": "4016.93.5050",
+      "origin": "CN",
+      "quantity": 2000,
+      "unit": "PCS",
+      "unit_price": 0.14,
+      "total_value": 280.0,
+      "metal_content": ""
+    },
+    {
+      "line": 5,
+      "part_number": "CBL-USB-2M",
+      "description": "USB-C cable, 2 m",
+      "hts_as_printed": "8544.42.9090",
+      "origin": "VN",
+      "quantity": 600,
+      "unit": "PCS",
+      "unit_price": 1.75,
+      "total_value": 1050.0,
+      "metal_content": ""
+    },
+    {
+      "line": 6,
+      "part_number": "PKG-CTN",
+      "description": "Corrugated carton, printed",
+      "hts_as_printed": "4819.10.0040",
+      "origin": "CN",
+      "quantity": 300,
+      "unit": "PCS",
+      "unit_price": 0.4,
+      "total_value": 120.0,
+      "metal_content": ""
+    }
+  ],
+  "invoice_total": 3730.0
+}
