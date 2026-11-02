@@ -1,0 +1,95 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Sample invoice before and after | Logistics Parser</title>
+<meta name="description" content="Fictional commercial invoice PDF next to the structured Excel and JSON output Logistics Parser returns.">
+<link rel="canonical" href="https://logisticsparser.com/sample/">
+<link rel="icon" href="../favicon.svg" type="image/svg+xml">
+<link rel="stylesheet" href="../style.css">
+</head>
+<body>
+<header class="top">
+ <div class="wrap">
+  <a class="logo" href="/"><img src="../favicon.svg" alt="">Logistics Parser</a>
+  <nav><a href="/#how">How it works</a><a href="/sample/">Sample</a><a href="/#privacy">Privacy</a><a href="/#contact">Contact</a></nav>
+ </div>
+</header>
+
+<main>
+<section class="hero" style="padding:48px 0 32px">
+ <div class="wrap">
+  <h1>Before and after</h1>
+  <p class="lead">A fictional sample invoice next to the structured output. No real shipper, importer or shipment. Download the PDF, Excel and JSON if you want to inspect them yourself.</p>
+  <a class="btn" href="mailto:hello@logisticsparser.com?subject=Show%20me&amp;body=Hi%20Nabin%2C%0A%0AAttached%20is%20one%20invoice%20(redacted).%20Please%20send%20back%20the%20Excel%20%2F%20JSON%20version.%0A%0AThanks">Email one invoice: hello@logisticsparser.com</a>
+  <a class="btn ghost" href="/">Back to home</a>
+ </div>
+</section>
+
+<section>
+ <div class="wrap">
+  <div class="ba">
+   <div class="panel">
+    <div class="ph">Before: commercial invoice PDF</div>
+    <div class="pb inv">
+     <div class="hd">COMMERCIAL INVOICE (SAMPLE, FICTIONAL DATA)</div>
+     Invoice No: SMP-2026-0418 &nbsp; Date: 2026-10-21 &nbsp; Terms: FOB Ningbo<br>
+     Shipper: Sample Industrial Parts Co., Ltd., Ningbo, China<br>
+     Consignee: Example Importer LLC, Edison, NJ, USA<br>
+     B/L: SMPL0000123456 &nbsp; Container: SMPU1234567<br><br>
+     <table>
+      <tr><th>#</th><th>Part No.</th><th>Description</th><th>HTS</th><th>Origin</th><th class="r">Qty</th><th class="r">Total USD</th></tr>
+      <tr><td>1</td><td>BRK-2201</td><td>Steel mounting bracket, zinc plated</td><td>7326.90.8688</td><td>CN</td><td class="r">1200</td><td class="r">1,020.00</td></tr>
+      <tr><td>2</td><td>HNG-0410</td><td>Aluminum door hinge, 4 in</td><td>8302.10.6090</td><td>CN</td><td class="r">800</td><td class="r">960.00</td></tr>
+      <tr><td>3</td><td>FST-M8-30</td><td>Hex bolt M8 x 30, stainless</td><td>7318.15.2095</td><td>CN</td><td class="r">5000</td><td class="r">300.00</td></tr>
+      <tr><td colspan="7">... 3 more lines ... &nbsp; Invoice total USD 3,730.00</td></tr>
+     </table>
+    </div>
+   </div>
+   <div class="panel">
+    <div class="ph">After: JSON (Excel also available)</div>
+    <div class="pb"><pre>{
+  "header": {
+    "invoice_number": "SMP-2026-0418",
+    "invoice_date": "2026-10-21",
+    "incoterms": "FOB Ningbo",
+    "currency": "USD",
+    "bill_of_lading": "SMPL0000123456",
+    "container": "SMPU1234567"
+  },
+  "lines": [
+    {
+      "line": 1,
+      "part_number": "BRK-2201",
+      "description": "Steel mounting bracket, zinc plated",
+      "hts_as_printed": "7326.90.8688",
+      "origin": "CN",
+      "quantity": 1200,
+      "unit": "PCS",
+      "unit_price": 0.85,
+      "total_value": 1020.0,
+      "metal_content": "Steel 0.42 kg/pc"
+    },
+    ...
+  ],
+  "invoice_total": 3730.0
+}</pre></div>
+   </div>
+  </div>
+  <div class="dl">
+   <a href="sample_invoice.pdf" download>Download sample invoice (PDF)</a>
+   <a href="sample_output.xlsx" download>Download sample output (Excel)</a>
+   <a href="sample_output.json" download>Download sample output (JSON)</a>
+  </div>
+ </div>
+</section>
+</main>
+
+<footer>
+ <div class="wrap">
+  <p>Logistics Parser · <a href="mailto:hello@logisticsparser.com">hello@logisticsparser.com</a> · <a href="/">Home</a></p>
+ </div>
+</footer>
+</body>
+</html>
